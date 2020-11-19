@@ -1,2 +1,4 @@
 # TCP socket communication between two Python scripts
-Code on https://pymotw.com/3/socket/tcp.html
+
+References:
+https://pymotw.com/3/socket/tcp.html
