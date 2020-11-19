@@ -23,7 +23,7 @@ while True:
         # Receive the data in small chunks and retransmit it
         # Sending continous msg
         msg_no = 0;
-        while True:
+        while msg_no < 3000:
             data = connection.recv(1024)
             print('received {!r}'.format(data))
             # if data:
@@ -32,7 +32,10 @@ while True:
             # else:
             #    print('no data from', client_address)
             #    break
-            connection.sendall(msg_no.to_bytes(2, 'big'))
+            # connection.sendall(msg_no.to_bytes(2, 'big'))
+            # connection.sendall(str.encode(str(msg_no)))
+            print(str(msg_no).encode())
+            connection.sendall(str(msg_no).encode())
             msg_no+=1
 
     finally:

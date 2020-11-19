@@ -22,9 +22,11 @@ try:
         amount_expected = len(message)
 
         while True:
-            data = sock.recv(2)
+            data = sock.recv(4)
             # amount_received += len(data)#                                    
-            print('received: ' + str(int.from_bytes(data,"big")))
+            # print('received: ' + str(int.from_bytes(data,"big")))
+            print('Received: ' + data.decode())
+            print('Received: {!r}'.format(data))
             sock.sendall(b'Next data.')  
 finally:
         print('closing socket')
